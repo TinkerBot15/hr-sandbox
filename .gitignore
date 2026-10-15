@@ -31,3 +31,19 @@ build/
 
 ### VS Code ###
 .vscode/
+
+###env
+.env*
+
+# Ignore Spring Boot config files
+application*.yml
+application*.yaml
+application*.properties
+application.properties
+.properties
+
+###docker
+flyway.conf
+
+##logs
+logs/
