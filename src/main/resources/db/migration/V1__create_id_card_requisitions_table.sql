@@ -1,0 +1,17 @@
+CREATE TABLE id_card_requisitions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    uuid VARCHAR(36) NOT NULL UNIQUE,
+    created_by VARCHAR(36) NOT NULL,
+    status ENUM(
+        'DRAFT',
+        'PROCESSING',
+        'PENDING_APPROVAL',
+        'APPROVED',
+        'REJECTED',
+        'CANCELLED',
+        'COMPLETED'
+    ) NOT NULL DEFAULT 'DRAFT',
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+        ON UPDATE CURRENT_TIMESTAMP
+);
